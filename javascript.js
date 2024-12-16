@@ -1,3 +1,11 @@
+// Global Variable Declarations
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+let humanScore    = 0;
+let computerScore = 0;
+
+
+// Function Declarations
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // () -> String
 // Return string of "rock", "paper" and "sscissors" randomly
@@ -28,7 +36,53 @@ function getHumanChoice() {
         return "scissors";
     }
     else {
-        return "You typed wrong selection";
+        return null;
     }
 }
+
+// (String, String) -> ()
+// To adjust computerScore and humanScore variable and print message of the winnger
+function playRound(humanChoice, computerChoice) {
+    switch(true) {
+        case humanChoice === "rock" && computerChoice === "rock": 
+            console.log("You are draw against computer");
+            break;
+        case humanChoice === "rock" && computerChoice === "paper":
+            console.log("You loose, paper win again rock");
+            computerScore = computerScore + 1;
+            break;
+        case humanChoice === "rock" && computerChoice === "scissors":
+            console.log("Congratulations, rock wins agains scissors");
+            humanScore = humanScore + 1 ;
+            break;
+        case humanChoice === "paper" && computerChoice === "rock":
+            console.log("Congratulations, paper wins agains rock");
+            humanScore = humanScore + 1;
+            break;
+        case humanChoice === "paper" && computerChoice === "paper":
+            console.log("You are draw against computer");            
+            break;
+        case humanChoice === "paper" && computerChoice === "scissor":
+            console.log("You loose, scissor wins against paper");
+            computerScore = computerScore +1;
+            break;
+        case humanChoice === "scissors" && computerChoice === "rock":
+            console.log("You loose, rock wins agains scissors");
+            computerScore = computerScore + 1;
+            break;
+        case humanChoice === "scissors" && computerChoice === "paper":
+            console.log("Congratulations, scissors wins agains paper");
+            humanScore = humanScore + 1;
+            break;
+        case humanChoice === "scissors" && computerChoice === "scissors":
+            console.log("You are draw against computer");
+            break;
+        case humanChoice === null:
+            console.log("You loose, you type wrong option");
+            computerScore =  computerScore + 1;
+            break
+    }
+}
+
+
 

@@ -13,3 +13,22 @@ function getComputerChoice() {
         return "scissors"
     }    
 }
+
+// () -> String
+// Return string of "rock", "paper" and "sscissors" from input prompt
+function getHumanChoice() {
+    let input = prompt("Select Rock, Paper or Scissors?");
+    if (input.toLowerCase()=== "rock") {
+        return "rock";
+    }
+    else if (input.toLowerCase()=== "paper") {
+        return "paper";
+    }
+    else if (input.toLowerCase() ==="scissors") {
+        return "scissors";
+    }
+    else {
+        return "You typed wrong selection";
+    }
+}
+

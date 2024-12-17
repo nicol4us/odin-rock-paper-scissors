@@ -97,10 +97,21 @@ function playGame() {
                 break;
     }
     }
+
     for (initialPlay; initialPlay <= maxPlay; initialPlay++) {
         playRound(getHumanChoice(), getComputerChoice());   
         
-        console.log(`You have played ${initialPlay} of ${maxPlay}`)
+        console.log(`You have played ${initialPlay} of ${maxPlay}`);
+    }
+
+    if(humanScore > computerScore) {
+        console.log("Congratulations you win the game!!!!");
+    }
+    else if (humanScore < computerScore) {
+        console.log("Unfortunately you are loose against computer");
+    }
+    else {
+        console.log(" You are both draw");
     }
 }
 
